@@ -16,14 +16,11 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
-
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
-
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPReply;
-
 import com.mysql.jdbc.PreparedStatement;;
 
 public class DBConnect implements connect
@@ -62,7 +59,7 @@ public class DBConnect implements connect
 	public void setLog(Timestamp login, Timestamp logOut)
 	{
 		String accesLog = "";
-		int actualUserID = 0;// = (Integer) null;//getUsertID(getActualUser());
+		int actualUserID = 0;
 		if(login == logOut)
 		{
 			actualUserID = 0;
@@ -74,7 +71,6 @@ public class DBConnect implements connect
 				accesLog = "Access-Granted";
 				actualUserID = getUsertID(getActualUser());
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -94,7 +90,6 @@ public class DBConnect implements connect
 	        con.close();
 	    } catch (SQLException ex) {
 	    	error("SQL Exception!");
-	    	//ex.printStackTrace();
 	    } 
 	}
 	//********************************************************	GETTERS	 *****************************************
@@ -468,9 +463,7 @@ public class DBConnect implements connect
 	    
 		    con.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			error("SQL Exception!");
-			//e.printStackTrace();
 		}
 	   
 		
