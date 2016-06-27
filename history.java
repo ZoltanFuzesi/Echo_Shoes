@@ -109,7 +109,7 @@ public class history extends JFrame implements ActionListener
 		customer.setPreferredSize(dropBox);
 		bougth.setPreferredSize(dropBox);
 		allLog.setPreferredSize(dropBox);
-		//sec thr need dgrid layout
+		//sec grid layout
 		mainPanel.setLayout(new BorderLayout());		//top panel
 		mainTop.add(mainLabel);							//label
 		mainPanel.add(mainTop, BorderLayout.NORTH);
@@ -169,7 +169,6 @@ public class history extends JFrame implements ActionListener
 		user.addItemListener(new ItemListener() {		
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				// TODO Auto-generated method stub
 				int index = 0;
 				
 				if(e.getStateChange()==1)
@@ -178,7 +177,6 @@ public class history extends JFrame implements ActionListener
 						try {
 							index = bdCon.getUsertID(x);
 						} catch (SQLException e1) {
-							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
 							fillActionDropDownBoxe(index, x);
@@ -191,21 +189,16 @@ public class history extends JFrame implements ActionListener
 		customer.addItemListener(new ItemListener() {		
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				// TODO Auto-generated method stub
 				int index = 0;
 					if(e.getStateChange()==1)
 					{
 						String x = String.valueOf(customer.getSelectedItem());
-						//System.out.println(x);
 						try {
 							index = bdCon.getcustomerID(x);
-							//System.out.println("Customer index " + index);
 						} catch (SQLException e1) {
-							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
 						fillBougthProductsDropDownBoxe(index, x);
-						//System.out.println("Customer index " + index + " Customer name " + x);
 					}		
 							
 			}
@@ -214,7 +207,6 @@ public class history extends JFrame implements ActionListener
 		action.addItemListener(new ItemListener() {		
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				// TODO Auto-generated method stub
 				printControl++;
 				if(e.getStateChange()==1&&printControl>0)
 				{
@@ -230,7 +222,6 @@ public class history extends JFrame implements ActionListener
 		log.addItemListener(new ItemListener() {		
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				// TODO Auto-generated method stub
 				if(e.getStateChange()==1)
 				{
 						String x = String.valueOf(log.getSelectedItem());
@@ -245,7 +236,6 @@ public class history extends JFrame implements ActionListener
 		bougth.addItemListener(new ItemListener() {		
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				// TODO Auto-generated method stub
 				if(e.getStateChange()==1)
 				{
 						String x = String.valueOf(bougth.getSelectedItem());
@@ -260,7 +250,6 @@ public class history extends JFrame implements ActionListener
 		allLog.addItemListener(new ItemListener() {		
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				// TODO Auto-generated method stub
 				if(e.getStateChange()==1)
 				{
 						String x = String.valueOf(allLog.getSelectedItem());
@@ -294,7 +283,6 @@ public class history extends JFrame implements ActionListener
 		try {
 			arrName = bdCon.usersNameDropBox();
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		for( String newRow : arrName ) {
@@ -311,7 +299,6 @@ public class history extends JFrame implements ActionListener
 		try {
 			arrName = bdCon.getUserActions(index, user);
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		for( String newRow : arrName ) {
@@ -328,7 +315,6 @@ public class history extends JFrame implements ActionListener
 		try {
 			arrName = bdCon.getUserLog(index, user);
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		for( String newRow : arrName ) {
@@ -345,7 +331,6 @@ public class history extends JFrame implements ActionListener
 		try {
 			arrName = bdCon.customerNameDropBox();
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		for( String newRow : arrName ) {
@@ -362,7 +347,6 @@ public class history extends JFrame implements ActionListener
 		try {
 			arrName = bdCon.bougthProducts(index, customer);
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		for( String newRow : arrName ) {
@@ -379,7 +363,6 @@ public class history extends JFrame implements ActionListener
 		try {
 			arrName = bdCon.getAllOtherLog();
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		for( String newRow : arrName ) {
@@ -394,7 +377,7 @@ public class history extends JFrame implements ActionListener
 	//action listeners
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		
 	String command = e.getActionCommand();
 
 		
