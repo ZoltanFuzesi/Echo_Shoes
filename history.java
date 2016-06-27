@@ -54,12 +54,12 @@ public class history extends JFrame implements ActionListener
 	private JPanel textAreaHolder = new JPanel();
 	private JLabel mainLabel = new JLabel("History");
 	//change for JcomboBoxes
-	JLabel userLabel = new JLabel("Select User");
-	JLabel actionLabel = new JLabel("Select Action");
-	JLabel logLabel = new JLabel("Log Records");
-	JLabel customerLabel = new JLabel("Customer");
-	JLabel bougthLabel = new JLabel("Bougth products");
-	JLabel allLogLabel = new JLabel("All other logs");
+	private JLabel userLabel = new JLabel("Select User");
+	private JLabel actionLabel = new JLabel("Select Action");
+	private JLabel logLabel = new JLabel("Log Records");
+	private JLabel customerLabel = new JLabel("Customer");
+	private JLabel bougthLabel = new JLabel("Bougth products");
+	private JLabel allLogLabel = new JLabel("All other logs");
 	private DefaultComboBoxModel userModel = new DefaultComboBoxModel();
 	private JComboBox user = new JComboBox(userModel);
 	
