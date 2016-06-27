@@ -16,9 +16,4 @@ public class mainWindow extends JFrame implements connect
 	        setResizable(true);	        
 	        changeW.createWorkingWindow(); 
 	}
-	
-	
-	
-	
-
 }
