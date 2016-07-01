@@ -43,7 +43,7 @@ public class driver extends JFrame implements ActionListener
 	}
 	
 	public driver(){
-        super("Echo.Shoes - logIn");
+        super("Eco.Shoes - logIn");
         calendar = Calendar.getInstance();
         loginTime = new java.sql.Timestamp(calendar.getTime().getTime());
         setLayout(new GridLayout(4,1));
