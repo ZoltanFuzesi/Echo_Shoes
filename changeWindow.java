@@ -205,7 +205,7 @@ public class changeWindow extends JFrame implements ActionListener
 	
 	public changeWindow(DBConnect user, Timestamp loginTime)
 	{
-		  super("Echo.Shoes");
+		  super("Eco.Shoes");
 		  this.loginTime = loginTime;
 		    setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); 
 	        setLocation(0, 0);
@@ -341,6 +341,7 @@ public class changeWindow extends JFrame implements ActionListener
 		else if(stateControll == 3)//product
 		{
 			fillSupplierFieldFromID(dbUser.productIdDetails(index));
+			setProductImage();
 		}
 		else if(stateControll == 4)//user
 		{
@@ -384,6 +385,7 @@ public class changeWindow extends JFrame implements ActionListener
 	{
 		image = dbUser.getImageName();
 		int type = image.getType() == 0? BufferedImage.TYPE_INT_ARGB : image.getType();
+		//int type = image.getType();
 		BufferedImage resizeImageJpg = resizeImage(image, type);
 	    img =  new ImageIcon(resizeImageJpg);  
         labBack.setIcon(img); // ADDED
@@ -1484,7 +1486,7 @@ public class changeWindow extends JFrame implements ActionListener
 							 else if(stateControll == 3)
 							 {
 								 getDetailsById(index);
-								 setProductImage();
+								 //setProductImage();
 							 }
 							 else if(stateControll == 4)
 							 {
@@ -1534,13 +1536,10 @@ public class changeWindow extends JFrame implements ActionListener
 								 getDetailsByName(x);
 							 }
 							 else if(stateControll == 3){	 
-								 getDetailsByName(x);
+								 getDetailsById(dbUser.getProductID(x));
+								 //getDetailsByName(x);
 								 setIndex(dbUser.getProductID(x));
-							    setProductImage();
-							 }
-							 else if(stateControll == 3){	 
-								 getDetailsByName(x);
-								 setIndex(dbUser.getProductID(x));
+							    // setProductImage();
 							 }
 							 else if(stateControll == 4){	 				
 								 setIndex(dbUser.getUsertID(x));
